@@ -19,18 +19,18 @@ This project uses the **BCI Competition IV (2008) Graz Dataset 2b**.
 ## ⚙️ Pipeline Architecture
 The software is designed as a modular Python-based pipeline, ensuring each step is independently executable and testable.
 
-1. **Data Loading & Preprocessing (`src/data_loader.py`, `src/preprocess.py`)**
-   * Imports raw `.gdf` files and extracts valid trials based on event markers.
+1. **Data Loading & Preprocessing (`src/pkl_reader.py`)**
+   * Imports raw `.pkl` files and extracts valid trials based on event markers.
    * Rejects trials heavily affected by eye movements using EOG channel data.
    * Applies signal filtering and normalizes segments.
-2. **Feature Extraction (`src/features.py`)**
+2. **Feature Extraction (`src/preprocessor.py`)**
    * Computes frequency-based spectral features (bandpower in the **mu** and **beta** bands).
    * Explores **Common Spatial Patterns (CSP)** to capture class-specific spatial activity.
-3. **Model Training & Evaluation (`src/models.py`)**
+3. **Model Training & Evaluation (`src/model.py`)**
    * Implements baseline classification using **Logistic Regression**.
    * Implements and compares **Support Vector Machines (SVM)**.
    * Evaluates performance using accuracy metrics, confusion matrices, and subject-level breakdowns.
-4. **Visualization (`src/visualize.py`)**
+4. **Visualization (`notebooks/notebook.ipynb`)**
    * Plots processed EEG signals, extracted feature distributions, and classifier evaluation results.
 
 ## 🚀 Getting Started
