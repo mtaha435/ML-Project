@@ -208,3 +208,5 @@ __marimo__/
 
 # Training/Testing Data
 data
+train_data.csv
+allfiles.txt
